@@ -20,6 +20,10 @@ def index():
     if request.method == 'POST':
         task_content = request.form['content']
 
+        # ✅ prevent empty or whitespace-only tasks
+        if not task_content.strip():
+            return redirect('/')
+
         new_task = Todo(content=task_content)
 
         try:
