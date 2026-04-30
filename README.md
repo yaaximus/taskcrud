@@ -1,11 +1,24 @@
 # TaskCRUD
 Flask based CRUD application for tasks
 
-Enable ENV
-.\env\Scripts\activate.ps1
+<!-- Creating Virtual Env -->
+python -m virtualenv nameofenv
+<!-- Example -->
+<!-- python -m virtualenv flaskcrudenv -->
 
-Deactivate ENV
+<!-- Enable ENV -->
+<!-- In Powershell -->
+.\env\Scripts\activate.ps1
+<!-- In Command Prompt -->
+env\Scripts\activate.bat
+
+
+<!-- Deactivate ENV -->
 deactivate
 
-RUN APP
+<!-- RUN APP -->
 python .\app.py
+
+<!-- Set up database in terminal -->
+<!-- Make sure env is acivated -->
+python create_db.py

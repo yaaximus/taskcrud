@@ -1,12 +1,20 @@
+<!-- This is the Parent template to be inherited by all template and to extend the functionality from -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Linking statis/css/main.css, giving the result string-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+    <!-- Jinja 2 Syntax, The templates that inherit base.html can insert own code here in there respective files -->
     {% block head %}{% endblock %}
+
 </head>
 <body>
+    <!-- Jinja 2 Syntax, The templates that inherit base.html can insert own code here in there respective files -->
+     <!-- If/else statments, for loops etc -->
     {% block body %}{% endblock %}
 </body>
 </html>

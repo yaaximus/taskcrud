@@ -5,20 +5,24 @@ from datetime import datetime, timezone
 
 
 app = Flask(__name__)
+
+# Telling app where the databasae is located, /// for relative path, //// for absolute path, test.db is the database name, everything will be stored in it
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+# Initialize database
 db = SQLAlchemy(app)
 
-
+# Create a model
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(200), nullable=False)
     completed = db.Column(db.Integer, default=0)
     date_created = db.Column(db.DateTime, default=datetime.now(timezone.utc))
 
+    # Every time we make a new element, this will return the task and its unique id
     def __repr__(self):
         return '<Task %r>' % self.id
 
-
+# Index route for the app
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
