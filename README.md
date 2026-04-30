@@ -22,3 +22,6 @@ python .\app.py
 <!-- Set up database in terminal -->
 <!-- Make sure env is acivated -->
 python create_db.py
+
+pip3 install gunicorn
+pip3 freeze > requirements.txt
